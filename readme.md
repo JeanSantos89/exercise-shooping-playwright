@@ -28,35 +28,38 @@ Diferente de modelos POM simples, este projeto utiliza uma classe separada para 
 
 ## 4. Estrutura de Arquivos
 
-AUTM02/
-├── pages/
-│   ├── HomePage.ts          # Métodos de ação e lógica de validação
-│   └── locators.ts          # Seletores de elementos (Locators)
-├── tests/
-│   └── checkout.spec.ts     # Script de teste principal
-├── playwright.config.ts
-└── package.json
+* **AUTM02/**
+    * **pages/**
+        * `HomePage.ts`: Centraliza as funções e regras de negócio do teste.
+        * `locators.ts`: Armazena todos os seletores (CSS/XPath) de forma isolada.
+    * **tests/**
+        * `checkout.spec.ts`: Contém os cenários de teste automatizados.
+    * `playwright.config.ts`: Arquivo de configuração de ambiente e navegadores.
+    * `package.json`: Gerenciador de dependências e atalhos de execução.
 
 ## 5. Cenários Automatizados 
 
 **TC01 – Fluxo Completo de Compra e Validação de Preço**
-Given que o usuário acessa a loja de camisetas
-When aplica o filtro de tamanho "XXL"
-And adiciona uma camiseta "Slim Black" e três camisetas "Cropped Groovy" ao carrinho
-Then o sistema deve somar corretamente as quantidades no ícone do carrinho
-And o valor total exibido deve ser a soma precisa dos preços individuais multiplicados pelas suas quantidades
-And o usuário deve conseguir prosseguir para o Checkout.
+
+* Given que o usuário acessa a loja de camisetas
+  
+* When aplica o filtro de tamanho "XXL"
+  
+* And adiciona uma camiseta "Slim Black" e três camisetas "Cropped Groovy" ao carrinho
+  
+* Then o sistema deve somar corretamente as quantidades no ícone do carrinho
+  
+* And o valor total exibido deve ser a soma precisa dos preços individuais multiplicados pelas suas quantidades
+  
+* And o usuário deve conseguir prosseguir para o Checkout.
 
 ## 6. Como Executar
 
 Instale as dependências:
-Bash
 npm install
+
 Execute os testes:
-
-Bash
 npx playwright test
-Exibir relatório:
 
-Bash
+Exibir relatório:
 npx playwright show-report
